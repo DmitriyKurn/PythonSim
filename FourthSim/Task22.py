@@ -12,3 +12,8 @@ for i in range(m):
     num_list_2.append(num)
 print(num_list_2)
 
+num_list3 = num_list_1+num_list_2
+
+for i in set(num_list3):
+    if num_list3.count(i) > 1:
+        print(i)
