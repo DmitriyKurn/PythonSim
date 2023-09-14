@@ -39,3 +39,22 @@ tel_book_lines[index_delete_data] = edited_line
 print(f"Запись — {edit_tel_book_lines}, изменена на — {edited_line}\n")
 with open(filename, 'w', encoding='utf-8') as f:
     f.write("\n".join(tel_book_lines))
+
+# Удаляет информацию из файла
+def delete_data(filename):
+    print("\nПП | ФИО | Телефон")
+with open(filename, 'r', encoding='utf-8') as data:
+    tel_book = data.read()
+print(tel_book)
+print("")
+index_delete_data = int(input("Введите номер строки для удаления: ")) - 1
+tel_book_lines = tel_book.split("\n")
+del_tel_book_lines = tel_book_lines[index_delete_data]
+tel_book_lines.pop(index_delete_data)
+print(f"Удалена запись: {del_tel_book_lines}\n")
+with open(filename, 'w', encoding='utf-8') as data:
+    data.write("\n".join(tel_book_lines))
+
+def main():
+    my_choice = -1
+file_tel = "tel.txt"
